@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ela Papel Ateliê × Rita Bolos — Cestas de Café da Manhã</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #FFB7C0;
+  --pink-deep: #FF94A5;
+  --pink-soft: #FFD6DD;
+  --cream: #FBF1E0;
+  --cream-warm: #F7E6CB;
+  --red: #D94B36;
+  --red-deep: #B83824;
+  --yellow: #F4D34D;
+  --yellow-soft: #FAE69E;
+  --blue: #B8D2E0;
+  --blue-soft: #D5E5EE;
+  --green: #C9D9A0;
+  --ink: #2A1F1C;
+  --ink-soft: #6D5E58;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--cream);
+  z-index: 100;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(42, 31, 28, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--red);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.brand-mark img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover { color: var(--red); }
+
+.header-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.icon-btn {
+  background: var(--cream);
+  border: 1.5px solid var(--ink);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: all 0.2s;
+  position: relative;
+}
+
+.icon-btn:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.icon-btn .badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--red);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--cream);
+}
+
+/* Hero */
+.hero {
+  padding: 1.5rem 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 1rem;
+  height: 540px;
+}
+
+.hero-left {
+  background: var(--pink);
+  border-radius: 28px;
+  padding: 3rem 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: white;
+  color: var(--red);
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge::before {
+  content: '✦';
+  color: var(--red);
+}
+
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  line-height: 0.9;
+  color: var(--red);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-desc {
+  font-size: 0.98rem;
+  color: var(--ink);
+  max-width: 380px;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--red);
+  color: white;
+  padding: 0.95rem 1.8rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero-cta:hover { background: var(--red-deep); transform: translateY(-2px); }
+
+.hero-right {
+  background: var(--red);
+  border-radius: 28px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-right-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.75rem 0.75rem;
+}
+
+.hero-right-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.hero-right-icons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--cream);
+  opacity: 0.8;
+}
+
+.dot:nth-child(2) { background: var(--pink); }
+.dot:nth-child(3) { background: var(--yellow); }
+
+.hero-grid-items {
+  background: var(--cream);
+  border-radius: 18px;
+  flex: 1;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.grid-item {
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.grid-item:hover { transform: scale(1.05) rotate(-3deg); }
+
+.grid-item:nth-child(1) { background: var(--pink-soft); }
+.grid-item:nth-child(2) { background: var(--yellow-soft); }
+.grid-item:nth-child(3) { background: var(--blue-soft); }
+.grid-item:nth-child(4) { background: var(--green); }
+.grid-item:nth-child(5) { background: var(--pink); }
+.grid-item:nth-child(6) { background: var(--cream-warm); }
+.grid-item:nth-child(7) { background: var(--yellow); }
+.grid-item:nth-child(8) { background: var(--blue); }
+.grid-item:nth-child(9) { background: var(--pink-soft); }
+
+/* Section */
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.section-head {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  color: var(--red);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 320px;
+  text-align: right;
+}
+
+/* Cestas */
+.cestas-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.cesta-card {
+  border-radius: 22px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.cesta-card:hover { transform: translateY(-4px); }
+
+.cesta-card:nth-child(1) { background: var(--yellow-soft); }
+.cesta-card:nth-child(2) { background: var(--blue-soft); }
+
+.cesta-tag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: var(--red);
+  color: white;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.cesta-like {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: white;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--ink);
+  z-index: 2;
+  transition: all 0.2s;
+}
+
+.cesta-like:hover, .cesta-like.liked {
+  background: var(--red);
+  color: white;
+}
+
+.cesta-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+}
+
+.cesta-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cesta-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+}
+
+.cesta-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+}
+
+.cesta-price {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+.cesta-desc {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cesta-items-list {
+  list-style: none;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem 1rem;
+}
+
+.cesta-items-list li {
+  padding: 0.15rem 0;
+  color: var(--ink);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.cesta-items-list li::before {
+  content: '•';
+  color: var(--red);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cesta-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1.5px dashed rgba(42, 31, 28, 0.15);
+}
+
+.cesta-from {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cesta-add {
+  background: var(--ink);
+  color: var(--cream);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.cesta-add:hover {
+  background: var(--red);
+  transform: rotate(15deg);
+}
+
+/* Adicionais */
+.adicionais-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.adicional-card {
+  border-radius: 22px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  transition: all 0.25s;
+}
+
+.adicional-card:nth-child(1) { background: var(--pink-soft); }
+.adicional-card:nth-child(2) { background: var(--yellow-soft); }
+.adicional-card:nth-child(3) { background: var(--green); }
+
+.adicional-card:hover { transform: translateY(-3px); }
+.adicional-card.selected { border-color: var(--red); }
+
+.adicional-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--red);
+  color: white;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.adicional-check {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.adicional-card.selected .adicional-check {
+  background: var(--red);
+  color: white;
+}
+
+.adicional-visual {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.adicional-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.adicional-price {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: var(--red);
+  font-size: 1.1rem;
+}
+
+.adicional-desc {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.25rem;
+}
+
+/* Sobre a Collab */
+.collab-section {
+  padding: 4rem 0;
+}
+
+.collab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.collab-image {
+  border-radius: 22px;
+  aspect-ratio: 4/5;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--pink-soft);
+}
+
+.collab-text {
+  padding: 2.5rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.collab-text h2 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--red);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.collab-text p {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.collab-brands {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px dashed rgba(42, 31, 28, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.collab-brands img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.collab-brands .x {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.collab-brands .rita {
+  background: var(--cream-warm);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1;
+  font-style: normal;
+  letter-spacing: 0.02em;
+}
+
+/* Footer */
+.footer {
+  background: var(--red);
+  color: var(--cream);
+  border-radius: 28px 28px 0 0;
+  padding: 3.5rem 2.5rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer h3 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.footer-col h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.footer-col a {
+  display: block;
+  color: var(--cream);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  opacity: 0.9;
+}
+
+.footer-col a:hover { opacity: 1; text-decoration: underline; }
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(251, 241, 224, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Cart */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 31, 28, 0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 200;
+}
+
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(440px, 100%);
+  background: var(--cream);
+  z-index: 201;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+}
+
+.cart.open { transform: translateX(0); }
+
+.cart-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1.5px dashed rgba(42, 31, 28, 0.15);
+}
+
+.cart-header h2 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--red);
+}
+
+.cart-close {
+  background: var(--cream);
+  border: 1.5px solid var(--ink);
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--ink);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.cart-close:hover { background: var(--ink); color: var(--cream); }
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 1.5rem;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--ink-soft);
+}
+
+.cart-empty-icon { font-size: 4rem; margin-bottom: 0.75rem; }
+
+.cart-empty-text {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1.5px dotted rgba(42, 31, 28, 0.1);
+}
+
+.cart-item:last-child { border-bottom: none; }
+
+.cart-item-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.cart-item-info { flex: 1; min-width: 0; }
+
+.cart-item-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.15rem;
+}
+
+.cart-item-price {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.cart-item-subtotal {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: var(--red);
+  font-size: 1rem;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.qty-btn {
+  background: var(--pink-soft);
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.qty-btn:hover { background: var(--red); color: white; }
+
+.qty-value {
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  margin-left: auto;
+  font-family: inherit;
+}
+
+.cart-item-remove:hover { color: var(--red); }
+
+.cart-footer {
+  padding: 1.5rem;
+  border-top: 1.5px dashed rgba(42, 31, 28, 0.15);
+  background: white;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.cart-total-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cart-total-value {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.btn-checkout {
+  width: 100%;
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.2s;
+}
+
+.btn-checkout:hover:not(:disabled) {
+  background: var(--red-deep);
+  transform: translateY(-2px);
+}
+
+.btn-checkout:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; height: auto; }
+  .hero-left { padding: 2.5rem 2rem; min-height: 360px; }
+  .hero-right { min-height: 360px; }
+  .cestas-row { grid-template-columns: 1fr; }
+  .adicionais-row { grid-template-columns: 1fr 1fr; }
+  .collab-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .nav { display: none; }
+  .cesta-items-list { grid-template-columns: 1fr; }
+  .section-head { flex-direction: column; align-items: flex-start; }
+  .section-subtitle { text-align: left; }
+}
+
+@media (max-width: 540px) {
+  .adicionais-row { grid-template-columns: 1fr; }
+  .hero-left { padding: 2rem 1.5rem; }
+  .cesta-card { padding: 1.25rem; }
+  .footer { padding: 2.5rem 1.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="brand-mark">
+      <img src="imagens/logo-ela-papel.jpeg" alt="ela papel ateliê">
+      ela papel ateliê
+    </a>
+    <nav class="nav">
+      <a href="#cestas">Cestas</a>
+      <a href="#adicionais">Adicionais</a>
+      <a href="#collab">Collab</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-icons">
+      <button class="icon-btn" aria-label="Favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </button>
+      <button class="icon-btn" onclick="toggleCart()" aria-label="Carrinho">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="hero-badge">collab edição limitada</span>
+        <h1 class="hero-title">Manhã</h1>
+        <p class="hero-desc">Cestas de café da manhã artesanais, montadas a mão pela Ela Papel Ateliê com bolos exclusivos da Rita Bolos. Escolha sua composição e finalize direto pelo WhatsApp.</p>
+        <a href="#cestas" class="hero-cta">Ver cestas →</a>
+      </div>
+      <div class="hero-right">
+        <div class="hero-right-header">
+          <span class="hero-right-title">o que vem dentro</span>
+          <div class="hero-right-icons">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+        </div>
+        <div class="hero-grid-items">
+          <div class="grid-item" title="Bolo de fubá">🍰</div>
+          <div class="grid-item" title="Croissant">🥐</div>
+          <div class="grid-item" title="Geleia">🍯</div>
+          <div class="grid-item" title="Café drip">☕</div>
+          <div class="grid-item" title="Foto do casal">📸</div>
+          <div class="grid-item" title="Bolachinhas">🍪</div>
+          <div class="grid-item" title="Suco">🧃</div>
+          <div class="grid-item" title="Cartão">💌</div>
+          <div class="grid-item" title="Xícaras">🫖</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cestas">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Nossas <em>cestas</em></h2>
+      <p class="section-subtitle">Duas composições montadas com carinho — escolha a que combina com sua manhã.</p>
+    </div>
+    <div class="cestas-row" id="cestasGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="adicionais">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">+ <em>adicionais</em></h2>
+      <p class="section-subtitle">Personalize sua cesta com extras. Toque para adicionar ou remover.</p>
+    </div>
+    <div class="adicionais-row" id="adicionaisGrid"></div>
+  </div>
+</section>
+
+<section class="collab-section" id="collab">
+  <div class="container">
+    <div class="collab-grid">
+      <div class="collab-image" style="background-image: url('imagens/cesta-1.png');"></div>
+      <div class="collab-text">
+        <h2>Uma <em>collab</em> que começa na manhã</h2>
+        <p>A Ela Papel Ateliê monta cada cesta com peças autorais — papelaria personalizada, cartões impressos, fotos do casal e detalhes pensados pra emocionar.</p>
+        <p>Em parceria com a Rita Bolos, trazemos os bolos artesanais (incluindo o queridinho bolo de fubá na caixa de acetato) pra completar a composição.</p>
+        <div class="collab-brands">
+          <img src="imagens/logo-ela-papel.jpeg" alt="ela papel">
+          <span class="x">×</span>
+          <div class="rita">Rita<br>Bolos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contato">
+  <div class="footer-grid">
+    <div>
+      <h3>Quer encomendar?<br>Manda <em>mensagem</em>.</h3>
+      <p style="opacity: 0.9; font-size: 0.95rem; max-width: 380px;">Atendimento e pedidos via WhatsApp. Combinamos data de entrega, mensagem personalizada do cartão e detalhes da cesta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="#cestas">Cestas</a>
+      <a href="#adicionais">Adicionais</a>
+      <a href="#collab">Sobre a collab</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="#" id="footerWhatsApp">WhatsApp</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Ela Papel Ateliê × Rita Bolos</span>
+    <span style="font-family: 'Fraunces', serif; font-style: italic;">feito com afeto ♡</span>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<aside class="cart" id="cart">
+  <div class="cart-header">
+    <h2>seu <em>carrinho</em></h2>
+    <button class="cart-close" onclick="toggleCart()" aria-label="Fechar">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-value" id="cartTotal">R$ 0,00</span>
+    </div>
+    <button class="btn-checkout" id="checkoutBtn" onclick="finalizarPedido()" disabled>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Finalizar no WhatsApp
+    </button>
+  </div>
+</aside>
+
+<script>
+// ===========================================================
+// CONFIGURAÇÃO — EDITE AQUI PARA PERSONALIZAR
+// ===========================================================
+
+// 👇 WhatsApp: código do país (55) + DDD + número, sem espaços
+const WHATSAPP_NUMERO = '5519983121795';
+
+// 👇 As cestas — edite preços e detalhes
+const CESTAS = [
+  {
+    id: 'retangular',
+    tag: 'a clássica',
+    nome: 'Cesta Retangular',
+    descricao: 'Numa bandeja de madeira retangular, montada para dois compartilharem a manhã.',
+    imagem: 'imagens/cesta-1.png',
+    preco: 189.90,
+    itens: [
+      'Bandeja retangular',
+      '2 xícaras caneladas',
+      '2 drip coffee',
+      '1 croissant artesanal',
+      '1 geleia artesanal',
+      '1 bolo de fubá',
+      '1 cartão personalizado',
+      '1 foto do casal'
+    ]
+  },
+  {
+    id: 'redonda',
+    tag: 'a completa',
+    nome: 'Cesta Redonda',
+    descricao: 'Numa cesta de palha, com suco artesanal e bolachinhas amanteigadas pra adoçar.',
+    imagem: 'imagens/cesta-2.jpg',
+    preco: 219.90,
+    itens: [
+      'Cesta redonda de palha',
+      '1 croissant artesanal',
+      '1 geleia artesanal',
+      '1 bolo de fubá',
+      '1 suco artesanal 300ml',
+      '1 pote de bolachinhas',
+      '1 cartão personalizado',
+      '1 foto do casal'
+    ]
+  }
+];
+
+// 👇 Itens adicionais (opcionais)
+const ADICIONAIS = [
+  { id: 'add1', nome: 'Bouquet de flores', preco: 35.00, icone: '💐', desc: 'flores frescas da estação' },
+  { id: 'add2', nome: '+1 foto', preco: 8.00, icone: '📷', desc: 'foto extra impressa' },
+  { id: 'add3', nome: 'Urso de pelúcia', preco: 45.00, icone: '🧸', desc: 'pelúcia macia, 25cm' }
+];
+
+// ===========================================================
+// CÓDIGO DO CARRINHO
+// ===========================================================
+
+const carrinho = {};
+
+function fmt(v) {
+  return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function findItem(id) {
+  return CESTAS.find(c => c.id === id) || ADICIONAIS.find(a => a.id === id);
+}
+
+function renderCestas() {
+  const grid = document.getElementById('cestasGrid');
+  grid.innerHTML = CESTAS.map((c, i) => `
+    <article class="cesta-card">
+      <span class="cesta-tag">${String(i+1).padStart(2,'0')} · ${c.tag}</span>
+      <button class="cesta-like" onclick="event.stopPropagation(); this.classList.toggle('liked')" aria-label="Favoritar">♥</button>
+      <div class="cesta-image" style="background-image: url('${c.imagem}')"></div>
+      <div class="cesta-info">
+        <div class="cesta-name-row">
+          <h3 class="cesta-name">${c.nome}</h3>
+          <span class="cesta-price">${fmt(c.preco)}</span>
+        </div>
+        <p class="cesta-desc">${c.descricao}</p>
+        <ul class="cesta-items-list">
+          ${c.itens.map(i => `<li>${i}</li>`).join('')}
+        </ul>
+        <div class="cesta-bottom">
+          <span class="cesta-from">adicionar ao carrinho</span>
+          <button class="cesta-add" onclick="addCesta('${c.id}')" aria-label="Adicionar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+function renderAdicionais() {
+  const grid = document.getElementById('adicionaisGrid');
+  grid.innerHTML = ADICIONAIS.map((a) => `
+    <div class="adicional-card ${carrinho[a.id] ? 'selected' : ''}" onclick="toggleAdicional('${a.id}')">
+      <span class="adicional-tag">opcional</span>
+      <span class="adicional-check">${carrinho[a.id] ? '✓' : '+'}</span>
+      <div class="adicional-visual">${a.icone}</div>
+      <div class="adicional-name">${a.nome}</div>
+      <div class="adicional-price">${fmt(a.preco)}</div>
+      <div class="adicional-desc">${a.desc}</div>
+    </div>
+  `).join('');
+}
+
+function addCesta(id) {
+  if (carrinho[id]) {
+    carrinho[id].qty += 1;
+  } else {
+    carrinho[id] = { item: findItem(id), qty: 1, tipo: 'cesta' };
+  }
+  updateUI();
+  openCart();
+}
+
+function toggleAdicional(id) {
+  if (carrinho[id]) {
+    delete carrinho[id];
+  } else {
+    carrinho[id] = { item: findItem(id), qty: 1, tipo: 'adicional' };
+  }
+  renderAdicionais();
+  updateUI();
+}
+
+function changeQty(id, delta) {
+  if (!carrinho[id]) return;
+  carrinho[id].qty += delta;
+  if (carrinho[id].qty <= 0) delete carrinho[id];
+  renderAdicionais();
+  updateUI();
+}
+
+function removeItem(id) {
+  delete carrinho[id];
+  renderAdicionais();
+  updateUI();
+}
+
+function calcTotal() {
+  return Object.values(carrinho).reduce((s, x) => s + x.item.preco * x.qty, 0);
+}
+
+function updateUI() {
+  const count = Object.values(carrinho).reduce((s, x) => s + x.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartTotal').textContent = fmt(calcTotal());
+  document.getElementById('checkoutBtn').disabled = count === 0;
+  renderCartItems();
+}
+
+function renderCartItems() {
+  const container = document.getElementById('cartItems');
+  const entries = Object.entries(carrinho);
+  if (entries.length === 0) {
+    container.innerHTML = `
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🥐</div>
+        <p class="cart-empty-text">vazio por enquanto</p>
+      </div>`;
+    return;
+  }
+  container.innerHTML = entries.map(([id, x]) => {
+    const hasImage = x.item.imagem;
+    const bgStyle = hasImage 
+      ? `background-image: url('${x.item.imagem}'); background-color: var(--cream-warm);` 
+      : `background: var(--pink-soft);`;
+    const imgContent = hasImage ? '' : (x.item.icone || '♡');
+    return `
+    <div class="cart-item">
+      <div class="cart-item-img" style="${bgStyle}">${imgContent}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${x.item.nome}</div>
+        <div class="cart-item-price">${fmt(x.item.preco)} · <span class="cart-item-subtotal">${fmt(x.item.preco * x.qty)}</span></div>
+        <div class="cart-item-controls">
+          <button class="qty-btn" onclick="changeQty('${id}', -1)">−</button>
+          <span class="qty-value">${x.qty}</span>
+          <button class="qty-btn" onclick="changeQty('${id}', 1)">+</button>
+          <button class="cart-item-remove" onclick="removeItem('${id}')">remover</button>
+        </div>
+      </div>
+    </div>
+  `}).join('');
+}
+
+function openCart() {
+  document.getElementById('cart').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+
+function toggleCart() {
+  document.getElementById('cart').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+
+function finalizarPedido() {
+  const entries = Object.values(carrinho);
+  if (entries.length === 0) return;
+  
+  let msg = '*🎀 Novo Pedido — Ela Papel × Rita Bolos*\n\n';
+  
+  const cestas = entries.filter(x => x.tipo === 'cesta');
+  const adicionais = entries.filter(x => x.tipo === 'adicional');
+  
+  if (cestas.length) {
+    msg += '*Cestas:*\n';
+    cestas.forEach(x => {
+      msg += `• ${x.qty}x ${x.item.nome} — ${fmt(x.item.preco * x.qty)}\n`;
+    });
+    msg += '\n';
+  }
+  
+  if (adicionais.length) {
+    msg += '*Adicionais:*\n';
+    adicionais.forEach(x => {
+      msg += `• ${x.qty}x ${x.item.nome} — ${fmt(x.item.preco * x.qty)}\n`;
+    });
+    msg += '\n';
+  }
+  
+  msg += `*Total: ${fmt(calcTotal())}*\n\n`;
+  msg += 'Gostaria de finalizar este pedido. 💌';
+  
+  const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+// Link do WhatsApp no footer
+document.getElementById('footerWhatsApp').href = `https://wa.me/${WHATSAPP_NUMERO}`;
+
+// Inicializa
+renderCestas();
+renderAdicionais();
+updateUI();
+</script>
+
+</body>
+</html>
