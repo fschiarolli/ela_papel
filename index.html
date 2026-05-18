@@ -37,6 +37,8 @@ body {
   overflow-x: hidden;
 }
 
+body.no-scroll { overflow: hidden; }
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -63,21 +65,35 @@ body {
 .brand-mark {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 1.25rem;
-  color: var(--red);
-  letter-spacing: -0.01em;
+  gap: 0.75rem;
   text-decoration: none;
 }
 
-.brand-mark img {
-  width: 38px;
-  height: 38px;
+.brand-logo {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  object-fit: cover;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(42, 31, 28, 0.08);
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.brand-x {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--red);
 }
 
 .nav {
@@ -140,9 +156,7 @@ body {
 }
 
 /* Hero */
-.hero {
-  padding: 1.5rem 0;
-}
+.hero { padding: 1.5rem 0; }
 
 .hero-grid {
   display: grid;
@@ -178,10 +192,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.hero-badge::before {
-  content: '✦';
-  color: var(--red);
-}
+.hero-badge::before { content: '✦'; color: var(--red); }
 
 .hero-title {
   font-family: 'Fraunces', serif;
@@ -244,10 +255,7 @@ body {
   font-weight: 500;
 }
 
-.hero-right-icons {
-  display: flex;
-  gap: 0.4rem;
-}
+.hero-right-icons { display: flex; gap: 0.4rem; }
 
 .dot {
   width: 11px;
@@ -278,7 +286,6 @@ body {
   justify-content: center;
   font-size: clamp(2rem, 4vw, 3rem);
   transition: transform 0.3s;
-  cursor: pointer;
 }
 
 .grid-item:hover { transform: scale(1.05) rotate(-3deg); }
@@ -294,9 +301,7 @@ body {
 .grid-item:nth-child(9) { background: var(--pink-soft); }
 
 /* Section */
-.section {
-  padding: 4rem 0 2rem;
-}
+.section { padding: 4rem 0 2rem; }
 
 .section-head {
   margin-bottom: 2rem;
@@ -339,7 +344,6 @@ body {
 }
 
 .cesta-card:hover { transform: translateY(-4px); }
-
 .cesta-card:nth-child(1) { background: var(--yellow-soft); }
 .cesta-card:nth-child(2) { background: var(--blue-soft); }
 
@@ -377,10 +381,7 @@ body {
   transition: all 0.2s;
 }
 
-.cesta-like:hover, .cesta-like.liked {
-  background: var(--red);
-  color: white;
-}
+.cesta-like:hover, .cesta-like.liked { background: var(--red); color: white; }
 
 .cesta-image {
   width: 100%;
@@ -391,10 +392,7 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.cesta-info {
-  display: flex;
-  flex-direction: column;
-}
+.cesta-info { display: flex; flex-direction: column; }
 
 .cesta-name-row {
   display: flex;
@@ -419,11 +417,7 @@ body {
   white-space: nowrap;
 }
 
-.cesta-desc {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
+.cesta-desc { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 1rem; }
 
 .cesta-items-list {
   list-style: none;
@@ -465,33 +459,32 @@ body {
   letter-spacing: 0.08em;
 }
 
-.cesta-add {
+.cesta-configure {
   background: var(--ink);
   color: var(--cream);
   border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 100px;
   cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.4rem;
   transition: all 0.2s;
 }
 
-.cesta-add:hover {
-  background: var(--red);
-  transform: rotate(15deg);
-}
+.cesta-configure:hover { background: var(--red); transform: translateY(-2px); }
 
-/* Adicionais */
-.adicionais-row {
+/* Adicionais (informational) */
+.adicionais-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
-.adicional-card {
+.adicional-info-card {
   border-radius: 22px;
   padding: 1.5rem 1.5rem 1.25rem;
   display: flex;
@@ -499,19 +492,13 @@ body {
   align-items: center;
   text-align: center;
   position: relative;
-  cursor: pointer;
-  border: 2.5px solid transparent;
-  transition: all 0.25s;
 }
 
-.adicional-card:nth-child(1) { background: var(--pink-soft); }
-.adicional-card:nth-child(2) { background: var(--yellow-soft); }
-.adicional-card:nth-child(3) { background: var(--green); }
+.adicional-info-card:nth-child(1) { background: var(--pink-soft); }
+.adicional-info-card:nth-child(2) { background: var(--yellow-soft); }
+.adicional-info-card:nth-child(3) { background: var(--green); }
 
-.adicional-card:hover { transform: translateY(-3px); }
-.adicional-card.selected { border-color: var(--red); }
-
-.adicional-tag {
+.adicional-info-tag {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -525,29 +512,7 @@ body {
   text-transform: uppercase;
 }
 
-.adicional-check {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: white;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  transition: all 0.2s;
-}
-
-.adicional-card.selected .adicional-check {
-  background: var(--red);
-  color: white;
-}
-
-.adicional-visual {
+.adicional-info-visual {
   width: 100%;
   aspect-ratio: 1/1;
   background: white;
@@ -557,33 +522,39 @@ body {
   justify-content: center;
   font-size: 4rem;
   margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
-.adicional-name {
+.adicional-info-name {
   font-family: 'Fraunces', serif;
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 0.2rem;
 }
 
-.adicional-price {
+.adicional-info-price {
   font-family: 'Fraunces', serif;
   font-weight: 700;
   color: var(--red);
   font-size: 1.1rem;
 }
 
-.adicional-desc {
+.adicional-info-desc {
   font-size: 0.8rem;
   color: var(--ink-soft);
   margin-top: 0.25rem;
 }
 
-/* Sobre a Collab */
-.collab-section {
-  padding: 4rem 0;
+.adicionais-hint {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-style: italic;
 }
+
+/* Sobre a Collab */
+.collab-section { padding: 4rem 0; }
 
 .collab-grid {
   display: grid;
@@ -618,11 +589,7 @@ body {
   line-height: 1.05;
 }
 
-.collab-text p {
-  color: var(--ink-soft);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
+.collab-text p { color: var(--ink-soft); font-size: 1rem; margin-bottom: 1rem; }
 
 .collab-brands {
   margin-top: 1.5rem;
@@ -637,33 +604,26 @@ body {
   font-weight: 500;
 }
 
-.collab-brands img {
-  width: 44px;
-  height: 44px;
+.collab-brands .logo-pill {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  object-fit: cover;
-}
-
-.collab-brands .x {
-  color: var(--red);
-  font-weight: 700;
-}
-
-.collab-brands .rita {
-  background: var(--cream-warm);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.55rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.1;
-  font-style: normal;
-  letter-spacing: 0.02em;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(42, 31, 28, 0.08);
 }
+
+.collab-brands .logo-pill img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 5px;
+}
+
+.collab-brands .x { color: var(--red); font-weight: 700; }
 
 /* Footer */
 .footer {
@@ -721,7 +681,7 @@ body {
   gap: 1rem;
 }
 
-/* Cart */
+/* Cart Sidebar */
 .cart-overlay {
   position: fixed;
   inset: 0;
@@ -785,20 +745,10 @@ body {
 
 .cart-close:hover { background: var(--ink); color: var(--cream); }
 
-.cart-items {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0.5rem 1.5rem;
-}
+.cart-items { flex: 1; overflow-y: auto; padding: 0.5rem 1.5rem; }
 
-.cart-empty {
-  text-align: center;
-  padding: 4rem 1rem;
-  color: var(--ink-soft);
-}
-
+.cart-empty { text-align: center; padding: 4rem 1rem; color: var(--ink-soft); }
 .cart-empty-icon { font-size: 4rem; margin-bottom: 0.75rem; }
-
 .cart-empty-text {
   font-family: 'Fraunces', serif;
   font-style: italic;
@@ -809,23 +759,19 @@ body {
 .cart-item {
   display: flex;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1.5px dotted rgba(42, 31, 28, 0.1);
 }
 
 .cart-item:last-child { border-bottom: none; }
 
 .cart-item-img {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 14px;
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
 }
 
 .cart-item-info { flex: 1; min-width: 0; }
@@ -837,9 +783,20 @@ body {
   margin-bottom: 0.15rem;
 }
 
-.cart-item-price {
+.cart-item-adicionais {
+  font-size: 0.78rem;
   color: var(--ink-soft);
-  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.cart-item-adicionais .adicional-line { display: block; padding-left: 0.6rem; position: relative; }
+.cart-item-adicionais .adicional-line::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 700;
 }
 
 .cart-item-subtotal {
@@ -847,6 +804,7 @@ body {
   font-weight: 700;
   color: var(--red);
   font-size: 1rem;
+  margin-top: 0.35rem;
 }
 
 .cart-item-controls {
@@ -900,6 +858,21 @@ body {
   background: white;
 }
 
+.cart-payment-info {
+  background: var(--pink-soft);
+  color: var(--ink);
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.cart-payment-info-icon { flex-shrink: 0; font-size: 1rem; }
+
 .cart-total {
   display: flex;
   justify-content: space-between;
@@ -940,15 +913,309 @@ body {
   transition: all 0.2s;
 }
 
-.btn-checkout:hover:not(:disabled) {
-  background: var(--red-deep);
-  transform: translateY(-2px);
+.btn-checkout:hover:not(:disabled) { background: var(--red-deep); transform: translateY(-2px); }
+.btn-checkout:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Modal (generic) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 31, 28, 0.55);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.btn-checkout:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+.modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+.modal {
+  background: var(--cream);
+  border-radius: 24px;
+  max-width: 540px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  transform: scale(0.95);
+  transition: transform 0.3s;
+  position: relative;
 }
+
+.modal-overlay.open .modal { transform: scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  border: 1.5px solid var(--ink);
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--ink);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: all 0.2s;
+}
+
+.modal-close:hover { background: var(--ink); color: var(--cream); }
+
+/* Modal Configure Cesta */
+.modal-image {
+  width: 100%;
+  aspect-ratio: 5/3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px 24px 0 0;
+}
+
+.modal-content { padding: 1.75rem; }
+
+.modal-tag {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.modal-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.modal-price-base {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.modal-desc { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 1.25rem; }
+
+.modal-section-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--red);
+  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.modal-adicionais { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+
+.modal-adicional {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-adicional:hover { border-color: var(--pink); }
+.modal-adicional.selected { border-color: var(--red); background: var(--pink-soft); }
+
+.modal-adicional-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.modal-adicional.selected .modal-adicional-check {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.modal-adicional-icon { font-size: 1.6rem; flex-shrink: 0; }
+
+.modal-adicional-info { flex: 1; min-width: 0; }
+
+.modal-adicional-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 0.1rem;
+}
+
+.modal-adicional-desc { font-size: 0.8rem; color: var(--ink-soft); }
+
+.modal-adicional-price {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: var(--red);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.modal-footer {
+  padding: 1.25rem 1.75rem 1.75rem;
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(to top, var(--cream) 70%, transparent);
+}
+
+.modal-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1.5px dashed rgba(42, 31, 28, 0.15);
+}
+
+.modal-total-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.modal-total-value {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: var(--red);
+}
+
+.btn-add-to-cart {
+  width: 100%;
+  background: var(--ink);
+  color: var(--cream);
+  border: none;
+  padding: 1rem;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.2s;
+}
+
+.btn-add-to-cart:hover { background: var(--red); transform: translateY(-2px); }
+
+/* Modal Confirmação (50%) */
+.modal-confirm { max-width: 460px; padding: 2rem; text-align: center; }
+
+.modal-confirm-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--pink-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 2rem;
+}
+
+.modal-confirm h2 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--red);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.modal-confirm p { color: var(--ink); font-size: 0.95rem; margin-bottom: 0.75rem; line-height: 1.5; }
+.modal-confirm p strong { color: var(--red); }
+
+.modal-confirm-note {
+  background: var(--cream-warm);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  color: var(--ink);
+  margin: 1.25rem 0;
+  text-align: left;
+}
+
+.modal-confirm-actions { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
+
+.btn-secondary {
+  flex: 1;
+  background: var(--cream-warm);
+  color: var(--ink);
+  border: none;
+  padding: 0.85rem;
+  border-radius: 100px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover { background: var(--ink); color: var(--cream); }
+
+.btn-primary {
+  flex: 1.4;
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 100px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover { background: #1ea355; transform: translateY(-1px); }
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -956,7 +1223,7 @@ body {
   .hero-left { padding: 2.5rem 2rem; min-height: 360px; }
   .hero-right { min-height: 360px; }
   .cestas-row { grid-template-columns: 1fr; }
-  .adicionais-row { grid-template-columns: 1fr 1fr; }
+  .adicionais-info { grid-template-columns: 1fr 1fr; }
   .collab-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .nav { display: none; }
@@ -966,10 +1233,14 @@ body {
 }
 
 @media (max-width: 540px) {
-  .adicionais-row { grid-template-columns: 1fr; }
+  .adicionais-info { grid-template-columns: 1fr; }
   .hero-left { padding: 2rem 1.5rem; }
   .cesta-card { padding: 1.25rem; }
   .footer { padding: 2.5rem 1.5rem 1.5rem; }
+  .modal-content { padding: 1.25rem; }
+  .modal-footer { padding: 1rem 1.25rem 1.25rem; }
+  .modal-name { font-size: 1.5rem; }
+  .brand-mark .brand-name { display: none; }
 }
 </style>
 </head>
@@ -978,8 +1249,9 @@ body {
 <header class="header">
   <div class="container header-inner">
     <a href="#" class="brand-mark">
-      <img src="imagens/logo-ela-papel.jpeg" alt="ela papel ateliê">
-      ela papel ateliê
+      <span class="brand-logo"><img src="imagens/logo-ela-papel.png" alt="ela papel ateliê"></span>
+      <span class="brand-x">×</span>
+      <span class="brand-logo"><img src="imagens/logo-rita-bolos.png" alt="rita bolos"></span>
     </a>
     <nav class="nav">
       <a href="#cestas">Cestas</a>
@@ -988,9 +1260,6 @@ body {
       <a href="#contato">Contato</a>
     </nav>
     <div class="header-icons">
-      <button class="icon-btn" aria-label="Favoritos">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-      </button>
       <button class="icon-btn" onclick="toggleCart()" aria-label="Carrinho">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span class="badge" id="cartCount">0</span>
@@ -1035,7 +1304,7 @@ body {
   <div class="container">
     <div class="section-head">
       <h2 class="section-title">Nossas <em>cestas</em></h2>
-      <p class="section-subtitle">Duas composições montadas com carinho — escolha a que combina com sua manhã.</p>
+      <p class="section-subtitle">Toque em uma cesta pra escolher os adicionais e adicionar ao carrinho.</p>
     </div>
     <div class="cestas-row" id="cestasGrid"></div>
   </div>
@@ -1045,9 +1314,10 @@ body {
   <div class="container">
     <div class="section-head">
       <h2 class="section-title">+ <em>adicionais</em></h2>
-      <p class="section-subtitle">Personalize sua cesta com extras. Toque para adicionar ou remover.</p>
+      <p class="section-subtitle">Extras que você pode incluir ao montar sua cesta.</p>
     </div>
-    <div class="adicionais-row" id="adicionaisGrid"></div>
+    <div class="adicionais-info" id="adicionaisInfo"></div>
+    <p class="adicionais-hint">↑ Selecione esses extras dentro de cada cesta — você escolhe quais incluir em cada uma.</p>
   </div>
 </section>
 
@@ -1060,9 +1330,9 @@ body {
         <p>A Ela Papel Ateliê monta cada cesta com peças autorais — papelaria personalizada, cartões impressos, fotos do casal e detalhes pensados pra emocionar.</p>
         <p>Em parceria com a Rita Bolos, trazemos os bolos artesanais (incluindo o queridinho bolo de fubá na caixa de acetato) pra completar a composição.</p>
         <div class="collab-brands">
-          <img src="imagens/logo-ela-papel.jpeg" alt="ela papel">
+          <span class="logo-pill"><img src="imagens/logo-ela-papel.png" alt="ela papel"></span>
           <span class="x">×</span>
-          <div class="rita">Rita<br>Bolos</div>
+          <span class="logo-pill"><img src="imagens/logo-rita-bolos.png" alt="rita bolos"></span>
         </div>
       </div>
     </div>
@@ -1093,6 +1363,7 @@ body {
   </div>
 </footer>
 
+<!-- Cart Sidebar -->
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <aside class="cart" id="cart">
   <div class="cart-header">
@@ -1101,26 +1372,66 @@ body {
   </div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-footer">
+    <div class="cart-payment-info">
+      <span class="cart-payment-info-icon">💌</span>
+      <span>Pedido confirmado mediante <strong>sinal de 50%</strong>. Combinamos pagamento e entrega pelo WhatsApp.</span>
+    </div>
     <div class="cart-total">
       <span class="cart-total-label">Total</span>
       <span class="cart-total-value" id="cartTotal">R$ 0,00</span>
     </div>
-    <button class="btn-checkout" id="checkoutBtn" onclick="finalizarPedido()" disabled>
+    <button class="btn-checkout" id="checkoutBtn" onclick="abrirConfirmacao()" disabled>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Finalizar no WhatsApp
+      Finalizar pedido
     </button>
   </div>
 </aside>
+
+<!-- Modal: Configurar Cesta -->
+<div class="modal-overlay" id="modalCesta" onclick="if(event.target===this) fecharModalCesta()">
+  <div class="modal">
+    <button class="modal-close" onclick="fecharModalCesta()" aria-label="Fechar">×</button>
+    <div class="modal-image" id="modalCestaImage"></div>
+    <div class="modal-content" id="modalCestaContent"></div>
+    <div class="modal-footer">
+      <div class="modal-total-row">
+        <span class="modal-total-label">Total</span>
+        <span class="modal-total-value" id="modalCestaTotal">R$ 0,00</span>
+      </div>
+      <button class="btn-add-to-cart" onclick="confirmarAdicaoCesta()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Adicionar ao carrinho
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Confirmação 50% -->
+<div class="modal-overlay" id="modalConfirmacao" onclick="if(event.target===this) fecharConfirmacao()">
+  <div class="modal modal-confirm">
+    <div class="modal-confirm-icon">💌</div>
+    <h2>Quase lá!</h2>
+    <p>Você está finalizando seu pedido pelo WhatsApp.</p>
+    <div class="modal-confirm-note">
+      <strong>⚠️ Importante:</strong> o pedido será <strong>contabilizado e confirmado</strong> apenas após o pagamento de <strong>50% do valor total como sinal</strong>. Combinaremos a forma de pagamento e a data de entrega pela conversa.
+    </div>
+    <div class="modal-confirm-actions">
+      <button class="btn-secondary" onclick="fecharConfirmacao()">Voltar</button>
+      <button class="btn-primary" onclick="enviarParaWhatsApp()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Continuar
+      </button>
+    </div>
+  </div>
+</div>
 
 <script>
 // ===========================================================
 // CONFIGURAÇÃO — EDITE AQUI PARA PERSONALIZAR
 // ===========================================================
 
-// 👇 WhatsApp: código do país (55) + DDD + número, sem espaços
 const WHATSAPP_NUMERO = '5519983121795';
 
-// 👇 As cestas — edite preços e detalhes
 const CESTAS = [
   {
     id: 'retangular',
@@ -1160,7 +1471,6 @@ const CESTAS = [
   }
 ];
 
-// 👇 Itens adicionais (opcionais)
 const ADICIONAIS = [
   { id: 'add1', nome: 'Bouquet de flores', preco: 35.00, icone: '💐', desc: 'flores frescas da estação' },
   { id: 'add2', nome: '+1 foto', preco: 8.00, icone: '📷', desc: 'foto extra impressa' },
@@ -1168,18 +1478,21 @@ const ADICIONAIS = [
 ];
 
 // ===========================================================
-// CÓDIGO DO CARRINHO
+// CARRINHO
 // ===========================================================
+// Cada entrada do carrinho representa uma cesta + seus adicionais:
+// { signature: 'retangular::add1,add3', cesta: {...}, adicionais: [{...}], qty: 1, precoUnit: 234.90 }
 
 const carrinho = {};
+
+let cestaConfigAtual = null;       // a cesta sendo configurada no modal
+let adicionaisSelecionados = [];   // ids dos adicionais selecionados no modal
 
 function fmt(v) {
   return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-function findItem(id) {
-  return CESTAS.find(c => c.id === id) || ADICIONAIS.find(a => a.id === id);
-}
+// ---------- Render Páginas ----------
 
 function renderCestas() {
   const grid = document.getElementById('cestasGrid');
@@ -1198,9 +1511,10 @@ function renderCestas() {
           ${c.itens.map(i => `<li>${i}</li>`).join('')}
         </ul>
         <div class="cesta-bottom">
-          <span class="cesta-from">adicionar ao carrinho</span>
-          <button class="cesta-add" onclick="addCesta('${c.id}')" aria-label="Adicionar">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span class="cesta-from">monte sua cesta</span>
+          <button class="cesta-configure" onclick="abrirModalCesta('${c.id}')">
+            Adicionar
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
         </div>
       </div>
@@ -1208,56 +1522,127 @@ function renderCestas() {
   `).join('');
 }
 
-function renderAdicionais() {
-  const grid = document.getElementById('adicionaisGrid');
+function renderAdicionaisInfo() {
+  const grid = document.getElementById('adicionaisInfo');
   grid.innerHTML = ADICIONAIS.map((a) => `
-    <div class="adicional-card ${carrinho[a.id] ? 'selected' : ''}" onclick="toggleAdicional('${a.id}')">
-      <span class="adicional-tag">opcional</span>
-      <span class="adicional-check">${carrinho[a.id] ? '✓' : '+'}</span>
-      <div class="adicional-visual">${a.icone}</div>
-      <div class="adicional-name">${a.nome}</div>
-      <div class="adicional-price">${fmt(a.preco)}</div>
-      <div class="adicional-desc">${a.desc}</div>
+    <div class="adicional-info-card">
+      <span class="adicional-info-tag">opcional</span>
+      <div class="adicional-info-visual">${a.icone}</div>
+      <div class="adicional-info-name">${a.nome}</div>
+      <div class="adicional-info-price">+ ${fmt(a.preco)}</div>
+      <div class="adicional-info-desc">${a.desc}</div>
     </div>
   `).join('');
 }
 
-function addCesta(id) {
-  if (carrinho[id]) {
-    carrinho[id].qty += 1;
+// ---------- Modal Configurar Cesta ----------
+
+function abrirModalCesta(cestaId) {
+  cestaConfigAtual = CESTAS.find(c => c.id === cestaId);
+  adicionaisSelecionados = [];
+  
+  document.getElementById('modalCestaImage').style.backgroundImage = `url('${cestaConfigAtual.imagem}')`;
+  renderModalCestaContent();
+  atualizarTotalModal();
+  
+  document.getElementById('modalCesta').classList.add('open');
+  document.body.classList.add('no-scroll');
+}
+
+function fecharModalCesta() {
+  document.getElementById('modalCesta').classList.remove('open');
+  document.body.classList.remove('no-scroll');
+}
+
+function renderModalCestaContent() {
+  const c = cestaConfigAtual;
+  document.getElementById('modalCestaContent').innerHTML = `
+    <span class="modal-tag">${c.tag}</span>
+    <div class="modal-name-row">
+      <h2 class="modal-name">${c.nome}</h2>
+      <span class="modal-price-base">${fmt(c.preco)}</span>
+    </div>
+    <p class="modal-desc">${c.descricao}</p>
+    
+    <div class="modal-section-title">Quer incluir algum extra?</div>
+    <div class="modal-adicionais">
+      ${ADICIONAIS.map(a => `
+        <div class="modal-adicional ${adicionaisSelecionados.includes(a.id) ? 'selected' : ''}" onclick="toggleAdicionalModal('${a.id}')">
+          <div class="modal-adicional-check">${adicionaisSelecionados.includes(a.id) ? '✓' : ''}</div>
+          <div class="modal-adicional-icon">${a.icone}</div>
+          <div class="modal-adicional-info">
+            <div class="modal-adicional-name">${a.nome}</div>
+            <div class="modal-adicional-desc">${a.desc}</div>
+          </div>
+          <div class="modal-adicional-price">+ ${fmt(a.preco)}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function toggleAdicionalModal(adId) {
+  if (adicionaisSelecionados.includes(adId)) {
+    adicionaisSelecionados = adicionaisSelecionados.filter(id => id !== adId);
   } else {
-    carrinho[id] = { item: findItem(id), qty: 1, tipo: 'cesta' };
+    adicionaisSelecionados.push(adId);
   }
+  renderModalCestaContent();
+  atualizarTotalModal();
+}
+
+function calcularTotalModal() {
+  if (!cestaConfigAtual) return 0;
+  const adsTotal = adicionaisSelecionados.reduce((s, id) => {
+    const a = ADICIONAIS.find(x => x.id === id);
+    return s + (a ? a.preco : 0);
+  }, 0);
+  return cestaConfigAtual.preco + adsTotal;
+}
+
+function atualizarTotalModal() {
+  document.getElementById('modalCestaTotal').textContent = fmt(calcularTotalModal());
+}
+
+function confirmarAdicaoCesta() {
+  const ads = adicionaisSelecionados
+    .map(id => ADICIONAIS.find(a => a.id === id))
+    .filter(Boolean);
+  
+  const signature = `${cestaConfigAtual.id}::${ads.map(a => a.id).sort().join(',')}`;
+  
+  if (carrinho[signature]) {
+    carrinho[signature].qty += 1;
+  } else {
+    carrinho[signature] = {
+      cesta: cestaConfigAtual,
+      adicionais: ads,
+      qty: 1,
+      precoUnit: calcularTotalModal()
+    };
+  }
+  
+  fecharModalCesta();
   updateUI();
   openCart();
 }
 
-function toggleAdicional(id) {
-  if (carrinho[id]) {
-    delete carrinho[id];
-  } else {
-    carrinho[id] = { item: findItem(id), qty: 1, tipo: 'adicional' };
-  }
-  renderAdicionais();
+// ---------- Carrinho ----------
+
+function changeQty(sig, delta) {
+  if (!carrinho[sig]) return;
+  carrinho[sig].qty += delta;
+  if (carrinho[sig].qty <= 0) delete carrinho[sig];
   updateUI();
 }
 
-function changeQty(id, delta) {
-  if (!carrinho[id]) return;
-  carrinho[id].qty += delta;
-  if (carrinho[id].qty <= 0) delete carrinho[id];
-  renderAdicionais();
-  updateUI();
-}
-
-function removeItem(id) {
-  delete carrinho[id];
-  renderAdicionais();
+function removeItem(sig) {
+  delete carrinho[sig];
   updateUI();
 }
 
 function calcTotal() {
-  return Object.values(carrinho).reduce((s, x) => s + x.item.preco * x.qty, 0);
+  return Object.values(carrinho).reduce((s, x) => s + x.precoUnit * x.qty, 0);
 }
 
 function updateUI() {
@@ -1279,27 +1664,26 @@ function renderCartItems() {
       </div>`;
     return;
   }
-  container.innerHTML = entries.map(([id, x]) => {
-    const hasImage = x.item.imagem;
-    const bgStyle = hasImage 
-      ? `background-image: url('${x.item.imagem}'); background-color: var(--cream-warm);` 
-      : `background: var(--pink-soft);`;
-    const imgContent = hasImage ? '' : (x.item.icone || '♡');
-    return `
+  container.innerHTML = entries.map(([sig, x]) => `
     <div class="cart-item">
-      <div class="cart-item-img" style="${bgStyle}">${imgContent}</div>
+      <div class="cart-item-img" style="background-image: url('${x.cesta.imagem}')"></div>
       <div class="cart-item-info">
-        <div class="cart-item-name">${x.item.nome}</div>
-        <div class="cart-item-price">${fmt(x.item.preco)} · <span class="cart-item-subtotal">${fmt(x.item.preco * x.qty)}</span></div>
+        <div class="cart-item-name">${x.cesta.nome}</div>
+        ${x.adicionais.length ? `
+          <div class="cart-item-adicionais">
+            ${x.adicionais.map(a => `<span class="adicional-line">${a.nome} (${fmt(a.preco)})</span>`).join('')}
+          </div>
+        ` : '<div class="cart-item-adicionais"><em>sem adicionais</em></div>'}
+        <div class="cart-item-subtotal">${fmt(x.precoUnit * x.qty)}</div>
         <div class="cart-item-controls">
-          <button class="qty-btn" onclick="changeQty('${id}', -1)">−</button>
+          <button class="qty-btn" onclick="changeQty('${sig}', -1)">−</button>
           <span class="qty-value">${x.qty}</span>
-          <button class="qty-btn" onclick="changeQty('${id}', 1)">+</button>
-          <button class="cart-item-remove" onclick="removeItem('${id}')">remover</button>
+          <button class="qty-btn" onclick="changeQty('${sig}', 1)">+</button>
+          <button class="cart-item-remove" onclick="removeItem('${sig}')">remover</button>
         </div>
       </div>
     </div>
-  `}).join('');
+  `).join('');
 }
 
 function openCart() {
@@ -1312,44 +1696,62 @@ function toggleCart() {
   document.getElementById('cartOverlay').classList.toggle('open');
 }
 
-function finalizarPedido() {
+// ---------- Modal Confirmação ----------
+
+function abrirConfirmacao() {
+  if (Object.keys(carrinho).length === 0) return;
+  document.getElementById('modalConfirmacao').classList.add('open');
+  document.body.classList.add('no-scroll');
+}
+
+function fecharConfirmacao() {
+  document.getElementById('modalConfirmacao').classList.remove('open');
+  document.body.classList.remove('no-scroll');
+}
+
+function enviarParaWhatsApp() {
   const entries = Object.values(carrinho);
   if (entries.length === 0) return;
   
   let msg = '*🎀 Novo Pedido — Ela Papel × Rita Bolos*\n\n';
   
-  const cestas = entries.filter(x => x.tipo === 'cesta');
-  const adicionais = entries.filter(x => x.tipo === 'adicional');
+  entries.forEach((x, idx) => {
+    msg += `*${x.qty}x ${x.cesta.nome}* — ${fmt(x.cesta.preco)}\n`;
+    if (x.adicionais.length) {
+      x.adicionais.forEach(a => {
+        msg += `   ↳ + ${a.nome} (${fmt(a.preco)})\n`;
+      });
+    }
+    msg += `   _Subtotal: ${fmt(x.precoUnit * x.qty)}_\n\n`;
+  });
   
-  if (cestas.length) {
-    msg += '*Cestas:*\n';
-    cestas.forEach(x => {
-      msg += `• ${x.qty}x ${x.item.nome} — ${fmt(x.item.preco * x.qty)}\n`;
-    });
-    msg += '\n';
-  }
+  const total = calcTotal();
+  const sinal = total * 0.5;
   
-  if (adicionais.length) {
-    msg += '*Adicionais:*\n';
-    adicionais.forEach(x => {
-      msg += `• ${x.qty}x ${x.item.nome} — ${fmt(x.item.preco * x.qty)}\n`;
-    });
-    msg += '\n';
-  }
-  
-  msg += `*Total: ${fmt(calcTotal())}*\n\n`;
-  msg += 'Gostaria de finalizar este pedido. 💌';
+  msg += `*Total: ${fmt(total)}*\n`;
+  msg += `_Sinal (50%): ${fmt(sinal)}_\n\n`;
+  msg += 'Gostaria de finalizar este pedido. Aguardo as instruções para o pagamento do sinal. 💌';
   
   const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
+  
+  fecharConfirmacao();
 }
+
+// Tecla ESC fecha modais
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    fecharModalCesta();
+    fecharConfirmacao();
+  }
+});
 
 // Link do WhatsApp no footer
 document.getElementById('footerWhatsApp').href = `https://wa.me/${WHATSAPP_NUMERO}`;
 
 // Inicializa
 renderCestas();
-renderAdicionais();
+renderAdicionaisInfo();
 updateUI();
 </script>
 
