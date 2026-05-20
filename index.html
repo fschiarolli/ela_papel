@@ -1472,9 +1472,9 @@ const CESTAS = [
 ];
 
 const ADICIONAIS = [
-  { id: 'add1', nome: 'Bouquet de flores', preco: 35.00, icone: '💐', desc: 'flores frescas da estação' },
-  { id: 'add2', nome: '+1 foto', preco: 8.00, icone: '📷', desc: 'foto extra impressa' },
-  { id: 'add3', nome: 'Urso de pelúcia', preco: 45.00, icone: '🧸', desc: 'pelúcia macia, 25cm' }
+  { id: 'add1', nome: 'Bouquet de flores', preco: 35.00, icone: '💐', desc: 'flores frescas da estação', imagem: 'imagens/bouquet.jpeg' },
+  { id: 'add2', nome: '+1 foto', preco: 8.00, icone: '📷', desc: 'foto extra impressa', imagem: 'imagens/photo.jpeg' },
+  { id: 'add3', nome: 'Urso de pelúcia', preco: 45.00, icone: '🧸', desc: 'pelúcia macia, 25cm', imagem: 'imagens/bear2.jpg' }
 ];
 
 // ===========================================================
@@ -1527,7 +1527,7 @@ function renderAdicionaisInfo() {
   grid.innerHTML = ADICIONAIS.map((a) => `
     <div class="adicional-info-card">
       <span class="adicional-info-tag">opcional</span>
-      <div class="adicional-info-visual">${a.icone}</div>
+      <div class="cesta-image" style="background-image: url('${a.imagem}')"></div>
       <div class="adicional-info-name">${a.nome}</div>
       <div class="adicional-info-price">+ ${fmt(a.preco)}</div>
       <div class="adicional-info-desc">${a.desc}</div>
