@@ -6,7 +6,7 @@
 <title>Ela Papel Ateliê × Rita Bolos — Cestas de Café da Manhã</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&family=Italianno&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
 :root {
   --pink: #FFB7C0;
@@ -523,6 +523,15 @@ body.no-scroll { overflow: hidden; }
   font-size: 4rem;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.adicional-info-visual.with-photo { background-color: #f5e9d6; }
+
+.adicional-info-tag.has-variantes {
+  background: var(--ink);
 }
 
 .adicional-info-name {
@@ -551,6 +560,465 @@ body.no-scroll { overflow: hidden; }
   color: var(--ink-soft);
   font-size: 0.9rem;
   font-style: italic;
+}
+
+/* ===========================================================
+   Seção Romance (estética vintage)
+   =========================================================== */
+
+.romance-section {
+  background: #EBDDC0;
+  margin: 3rem 0 0;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Padrão sutil de pontinhos no fundo */
+.romance-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(184, 56, 36, 0.12) 1px, transparent 0);
+  background-size: 22px 22px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.romance-section .container { position: relative; z-index: 2; }
+
+/* Cabeçalho da seção */
+.romance-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.romance-deco {
+  font-size: 1rem;
+  color: var(--red);
+  letter-spacing: 0.8em;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+  font-family: serif;
+}
+
+.romance-eyebrow {
+  font-family: 'Italianno', cursive;
+  font-size: 2.4rem;
+  color: var(--red);
+  line-height: 1;
+  display: block;
+  transform: rotate(-1.5deg);
+}
+
+.romance-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  color: var(--red-deep);
+  letter-spacing: -0.02em;
+  margin: 0.3rem 0 1rem;
+  line-height: 0.95;
+}
+
+.romance-title em {
+  font-style: italic;
+  font-weight: 400;
+  position: relative;
+}
+
+.romance-title em::after {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 0.05em;
+  height: 8px;
+  background: rgba(184, 56, 36, 0.15);
+  border-radius: 100px;
+  z-index: -1;
+}
+
+.romance-stamp {
+  display: inline-block;
+  border: 2px solid var(--red-deep);
+  color: var(--red-deep);
+  padding: 0.3rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  background: rgba(255, 255, 255, 0.35);
+  margin-top: 0.5rem;
+  font-family: 'Fraunces', serif;
+}
+
+/* Grid principal */
+.romance-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Polaroid da foto */
+.romance-photo-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.romance-photo {
+  background: #FBF7EE;
+  padding: 1rem 1rem 3.5rem;
+  border-radius: 4px;
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.04),
+    0 12px 32px rgba(74, 50, 30, 0.18);
+  transform: rotate(-1.8deg);
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  transition: transform 0.4s ease;
+}
+
+.romance-photo:hover { transform: rotate(0deg) scale(1.01); }
+
+.romance-photo-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 10 / 11;
+  background-size: cover;
+  background-position: center;
+  background-color: #f5e9d6;
+}
+
+.romance-photo-caption {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Italianno', cursive;
+  font-size: 1.85rem;
+  color: var(--red-deep);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Fita washi nos cantos da polaroid */
+.romance-photo::before,
+.romance-photo::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 22px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(217, 75, 54, 0.85),
+    rgba(217, 75, 54, 0.85) 5px,
+    rgba(255, 255, 255, 0.85) 5px,
+    rgba(255, 255, 255, 0.85) 10px
+  );
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.romance-photo::before {
+  top: -10px;
+  left: -15px;
+  transform: rotate(-30deg);
+}
+
+.romance-photo::after {
+  top: -10px;
+  right: -15px;
+  transform: rotate(30deg);
+}
+
+/* Card de conteúdo */
+.romance-content {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.romance-tag {
+  display: inline-block;
+  background: var(--red-deep);
+  color: #FBF7EE;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.romance-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+}
+
+.romance-name em {
+  font-style: italic;
+  color: var(--red-deep);
+}
+
+.romance-desc {
+  color: #5a4a3e;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  max-width: 460px;
+}
+
+.romance-desc-script {
+  font-family: 'Italianno', cursive;
+  font-size: 1.7rem;
+  color: var(--red-deep);
+  display: block;
+  line-height: 1;
+  margin-top: 0.5rem;
+  transform: rotate(-1deg);
+  transform-origin: left;
+}
+
+.romance-items-title {
+  font-family: 'Italianno', cursive;
+  font-size: 1.7rem;
+  color: var(--red-deep);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.romance-items {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem 1.25rem;
+  font-size: 0.88rem;
+  margin-bottom: 2rem;
+  color: var(--ink);
+}
+
+.romance-items li {
+  padding: 0.2rem 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.romance-items li::before {
+  content: '♥';
+  color: var(--red);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.romance-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 2px dashed rgba(184, 56, 36, 0.25);
+  flex-wrap: wrap;
+}
+
+.romance-price-wrap { display: flex; flex-direction: column; }
+
+.romance-price-label {
+  font-family: 'Italianno', cursive;
+  font-size: 1.3rem;
+  color: var(--red-deep);
+  line-height: 0.8;
+  margin-bottom: 0.1rem;
+  opacity: 0.85;
+}
+
+.romance-price {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--red-deep);
+  line-height: 1;
+}
+
+.romance-add {
+  background: var(--red-deep);
+  color: #FBF7EE;
+  border: none;
+  padding: 0.95rem 1.75rem;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.03em;
+  transition: all 0.2s;
+  box-shadow: 0 3px 0 rgba(74, 30, 22, 0.6);
+}
+
+.romance-add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(74, 30, 22, 0.6);
+  background: #9C2F1E;
+}
+
+.romance-add:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 rgba(74, 30, 22, 0.6);
+}
+
+/* ----- Stickers decorativos vintage ----- */
+.romance-stickers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.sticker {
+  position: absolute;
+  filter: drop-shadow(0 2px 4px rgba(74, 50, 30, 0.18));
+  user-select: none;
+}
+
+.sticker svg { display: block; width: 100%; height: auto; }
+
+/* Floral sprig - canto superior esquerdo */
+.sticker-flowers {
+  top: 50px;
+  left: 36px;
+  width: 52px;
+  transform: rotate(-12deg);
+}
+
+/* Coração estilizado - canto superior direito */
+.sticker-heart {
+  top: 70px;
+  right: 70px;
+  width: 64px;
+  transform: rotate(10deg);
+}
+
+/* "i love you" caligráfico - borda esquerda vertical */
+.sticker-iloveyou {
+  top: 45%;
+  left: 12px;
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: left center;
+  font-family: 'Italianno', cursive;
+  font-size: 2.4rem;
+  color: var(--red-deep);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  filter: drop-shadow(0 1px 1px rgba(74, 50, 30, 0.15));
+}
+
+/* Lua - lateral direita meio */
+.sticker-moon {
+  top: 52%;
+  right: 28px;
+  width: 56px;
+  transform: rotate(15deg);
+}
+
+/* "forever." - entre o head e o grid */
+.sticker-forever {
+  top: 220px;
+  left: 55%;
+  transform: rotate(-3deg);
+}
+
+.sticker-forever span {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  background: rgba(255, 252, 240, 0.65);
+  padding: 0.22rem 0.7rem;
+  border: 1px dashed rgba(74, 50, 30, 0.2);
+  display: inline-block;
+}
+
+/* Tickets de cinema - abaixo da foto */
+.sticker-tickets {
+  bottom: 140px;
+  left: 50px;
+  width: 130px;
+  transform: rotate(-14deg);
+}
+
+/* "my love.*" - bem embaixo */
+.sticker-mylove {
+  bottom: 55px;
+  right: 12%;
+  transform: rotate(3deg);
+}
+
+.sticker-mylove span {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--red-deep);
+  background: rgba(255, 252, 240, 0.55);
+  padding: 0.2rem 0.6rem;
+}
+
+/* Mini corações espalhados */
+.sticker-mini-heart {
+  color: var(--red);
+  font-size: 0.95rem;
+  filter: drop-shadow(0 1px 1px rgba(74, 50, 30, 0.15));
+}
+
+.sticker-mini-1 { top: 165px; left: 33%; transform: rotate(-15deg); }
+.sticker-mini-2 { top: 360px; right: 22%; transform: rotate(20deg); font-size: 0.75rem; }
+.sticker-mini-3 { bottom: 230px; right: 35%; transform: rotate(-12deg); font-size: 0.85rem; }
+.sticker-mini-4 { top: 60%; left: 20%; transform: rotate(8deg); font-size: 0.7rem; opacity: 0.8; }
+
+/* Selo de carta - bottom-right area */
+.sticker-envelope {
+  bottom: 90px;
+  left: 18%;
+  width: 70px;
+  transform: rotate(-8deg);
+}
+
+/* Esconde stickers que ficam apertados em telas menores */
+@media (max-width: 1100px) {
+  .sticker-iloveyou { font-size: 2rem; }
+  .sticker-forever { left: 50%; }
+}
+
+@media (max-width: 900px) {
+  .sticker-tickets,
+  .sticker-iloveyou,
+  .sticker-forever,
+  .sticker-envelope { display: none; }
+  .sticker-flowers { width: 42px; top: 40px; left: 20px; }
+  .sticker-heart { width: 50px; top: 50px; right: 30px; }
+  .sticker-moon { width: 44px; right: 18px; }
+  .sticker-mini-1,
+  .sticker-mini-2,
+  .sticker-mini-3,
+  .sticker-mini-4 { display: none; }
 }
 
 /* Sobre a Collab */
@@ -1070,6 +1538,27 @@ body.no-scroll { overflow: hidden; }
 
 .modal-adicional-icon { font-size: 1.6rem; flex-shrink: 0; }
 
+.modal-adicional-icon.with-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-color: #f5e9d6;
+}
+
+.modal-adicional-variante-tag {
+  display: inline-block;
+  margin-top: 0.2rem;
+  background: var(--red);
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
 .modal-adicional-info { flex: 1; min-width: 0; }
 
 .modal-adicional-name {
@@ -1215,7 +1704,87 @@ body.no-scroll { overflow: hidden; }
   transition: all 0.2s;
 }
 
-.btn-primary:hover { background: #1ea355; transform: translateY(-1px); }
+/* Modal Variante Urso */
+.modal-variante { max-width: 480px; padding: 1.75rem; text-align: center; }
+#modalVariante { z-index: 310; }
+
+.modal-variante .modal-tag { margin: 0 auto 1rem; }
+
+.modal-variante h2 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.modal-variante > p {
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  margin-bottom: 1.5rem;
+}
+
+.variantes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.variante-option {
+  background: white;
+  border: 2.5px solid transparent;
+  border-radius: 16px;
+  padding: 0.75rem 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.variante-option:hover { border-color: var(--pink); transform: translateY(-2px); }
+.variante-option.selected { border-color: var(--red); background: var(--pink-soft); }
+
+.variante-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-color: #f5e9d6;
+  margin-bottom: 0.6rem;
+}
+
+.variante-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.variante-check {
+  display: inline-block;
+  margin-top: 0.3rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--ink-soft);
+  color: white;
+  font-weight: 800;
+  font-size: 0.7rem;
+  line-height: 16px;
+  transition: all 0.2s;
+}
+
+.variante-option.selected .variante-check {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.modal-variante .modal-confirm-note { text-align: left; }
+.modal-variante .modal-confirm-actions { margin-top: 1.25rem; }
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -1230,6 +1799,9 @@ body.no-scroll { overflow: hidden; }
   .cesta-items-list { grid-template-columns: 1fr; }
   .section-head { flex-direction: column; align-items: flex-start; }
   .section-subtitle { text-align: left; }
+  .romance-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .romance-content { padding: 0 0.5rem; text-align: left; }
+  .romance-items { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 540px) {
@@ -1241,6 +1813,11 @@ body.no-scroll { overflow: hidden; }
   .modal-footer { padding: 1rem 1.25rem 1.25rem; }
   .modal-name { font-size: 1.5rem; }
   .brand-mark .brand-name { display: none; }
+  .romance-section { padding: 3rem 0; }
+  .romance-photo { padding: 0.75rem 0.75rem 2.75rem; }
+  .romance-photo-caption { font-size: 1.5rem; }
+  .romance-bottom { flex-direction: column; align-items: stretch; }
+  .romance-add { justify-content: center; }
 }
 </style>
 </head>
@@ -1255,6 +1832,7 @@ body.no-scroll { overflow: hidden; }
     </a>
     <nav class="nav">
       <a href="#cestas">Cestas</a>
+      <a href="#romance">Romance</a>
       <a href="#adicionais">Adicionais</a>
       <a href="#collab">Collab</a>
       <a href="#contato">Contato</a>
@@ -1307,6 +1885,160 @@ body.no-scroll { overflow: hidden; }
       <p class="section-subtitle">Toque em uma cesta pra escolher os adicionais e adicionar ao carrinho.</p>
     </div>
     <div class="cestas-row" id="cestasGrid"></div>
+  </div>
+</section>
+
+<section class="romance-section" id="romance">
+  <!-- Stickers vintage decorativos (sem interação) -->
+  <div class="romance-stickers" aria-hidden="true">
+    
+    <!-- Floral sprig (top-left) -->
+    <div class="sticker sticker-flowers">
+      <svg viewBox="0 0 50 90" xmlns="http://www.w3.org/2000/svg">
+        <line x1="25" y1="18" x2="25" y2="86" stroke="#7a8862" stroke-width="1.4" stroke-linecap="round"/>
+        <ellipse cx="18" cy="38" rx="6" ry="2.5" fill="#9aa674" transform="rotate(-30 18 38)"/>
+        <ellipse cx="32" cy="52" rx="6" ry="2.5" fill="#9aa674" transform="rotate(30 32 52)"/>
+        <ellipse cx="20" cy="68" rx="6" ry="2.5" fill="#9aa674" transform="rotate(-30 20 68)"/>
+        <g transform="translate(25, 18)">
+          <circle cx="-5" cy="-2" r="3" fill="#fbf7ee" stroke="#d4c8b0" stroke-width="0.6"/>
+          <circle cx="5" cy="-2" r="3" fill="#fbf7ee" stroke="#d4c8b0" stroke-width="0.6"/>
+          <circle cx="0" cy="-7" r="3" fill="#fbf7ee" stroke="#d4c8b0" stroke-width="0.6"/>
+          <circle cx="0" cy="3" r="3" fill="#fbf7ee" stroke="#d4c8b0" stroke-width="0.6"/>
+          <circle cx="0" cy="-2" r="1.8" fill="#f4d34d"/>
+        </g>
+        <g transform="translate(35, 30)">
+          <circle cx="-4" cy="-1" r="2.4" fill="#fbf7ee" stroke="#d4c8b0" stroke-width="0.5"/>
+          <circle cx="4" cy="-1" r="2.4" fill="#fbf7ee" stroke="#d4c8b0" stroke-width="0.5"/>
+          <circle cx="0" cy="-5" r="2.4" fill="#fbf7ee" stroke="#d4c8b0" stroke-width="0.5"/>
+          <circle cx="0" cy="-1" r="1.3" fill="#f4d34d"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Coração estilizado vintage (top-right) -->
+    <div class="sticker sticker-heart">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 86 C 34 76, 14 60, 14 38 C 14 24, 24 16, 34 16 C 42 16, 48 21, 50 28 C 52 21, 58 16, 66 16 C 76 16, 86 24, 86 38 C 86 60, 66 76, 50 86 Z" 
+              fill="#C13B26" stroke="#7A2515" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M50 75 C 38 66, 24 54, 24 38 C 24 28, 30 23, 36 25" 
+              fill="none" stroke="#7A2515" stroke-width="1.3" stroke-dasharray="2,3" opacity="0.55" stroke-linecap="round"/>
+        <ellipse cx="42" cy="35" rx="3" ry="6" fill="#E8927F" opacity="0.5" transform="rotate(-25 42 35)"/>
+      </svg>
+    </div>
+
+    <!-- "i love you" caligráfico vertical -->
+    <div class="sticker sticker-iloveyou">i love you</div>
+
+    <!-- Lua cheia com crateras (lateral direita) -->
+    <div class="sticker sticker-moon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="42" fill="#EFDFBC" stroke="#A89272" stroke-width="1.5"/>
+        <circle cx="36" cy="40" r="4" fill="rgba(74, 50, 30, 0.16)"/>
+        <circle cx="60" cy="55" r="3" fill="rgba(74, 50, 30, 0.16)"/>
+        <circle cx="50" cy="68" r="5" fill="rgba(74, 50, 30, 0.16)"/>
+        <circle cx="42" cy="60" r="2" fill="rgba(74, 50, 30, 0.16)"/>
+        <circle cx="65" cy="35" r="2.5" fill="rgba(74, 50, 30, 0.16)"/>
+        <circle cx="30" cy="55" r="2" fill="rgba(74, 50, 30, 0.16)"/>
+      </svg>
+    </div>
+
+    <!-- "forever." typewriter label -->
+    <div class="sticker sticker-forever"><span>forever.</span></div>
+
+    <!-- Tickets de cinema vintage -->
+    <div class="sticker sticker-tickets">
+      <svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(20, 14) rotate(-6 90 35)">
+          <rect x="0" y="0" width="170" height="58" rx="3" fill="#DCC592" stroke="#8B6F3A" stroke-width="1.5"/>
+          <text x="22" y="24" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#5A4225">TICKET</text>
+          <text x="22" y="44" font-family="Georgia, serif" font-size="9" fill="#5A4225">ADMIT ONE</text>
+          <line x1="100" y1="6" x2="100" y2="52" stroke="#8B6F3A" stroke-width="1" stroke-dasharray="3,3"/>
+          <text x="130" y="34" font-family="monospace" font-size="9" fill="#5A4225">0783654 B</text>
+        </g>
+        <g transform="translate(6, 22)">
+          <rect x="0" y="0" width="170" height="58" rx="3" fill="#EDD9A6" stroke="#8B6F3A" stroke-width="1.5"/>
+          <text x="22" y="24" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#5A4225">TICKET</text>
+          <text x="22" y="44" font-family="Georgia, serif" font-size="9" fill="#5A4225">ADMIT ONE</text>
+          <line x1="100" y1="6" x2="100" y2="52" stroke="#8B6F3A" stroke-width="1" stroke-dasharray="3,3"/>
+          <text x="130" y="34" font-family="monospace" font-size="9" fill="#5A4225">0783654 B</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Envelope com coração -->
+    <div class="sticker sticker-envelope">
+      <svg viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="10" width="92" height="52" rx="2" fill="#F2E2C8" stroke="#A08866" stroke-width="1.5"/>
+        <path d="M4,11 L50,40 L96,11" stroke="#A08866" fill="none" stroke-width="1.4"/>
+        <text x="50" y="56" font-size="14" fill="#C13B26" text-anchor="middle" font-family="serif">♥</text>
+      </svg>
+    </div>
+
+    <!-- "my love.*" typewriter label -->
+    <div class="sticker sticker-mylove"><span>my love.*</span></div>
+
+    <!-- Mini corações espalhados -->
+    <div class="sticker sticker-mini-heart sticker-mini-1">♥</div>
+    <div class="sticker sticker-mini-heart sticker-mini-2">♥</div>
+    <div class="sticker sticker-mini-heart sticker-mini-3">♥</div>
+    <div class="sticker sticker-mini-heart sticker-mini-4">♥</div>
+
+  </div>
+
+  <div class="container">
+    <div class="romance-head">
+      <div class="romance-deco">♥ ✦ ♥ ✦ ♥</div>
+      <span class="romance-eyebrow">~ uma edição muito especial ~</span>
+      <h2 class="romance-title">Doce <em>Romance</em></h2>
+      <span class="romance-stamp">edição limitada · valentine</span>
+    </div>
+
+    <div class="romance-grid">
+      <div class="romance-photo-wrap">
+        <div class="romance-photo">
+          <div class="romance-photo-img" style="background-image: url('imagens/cesta-romance.png')"></div>
+          <span class="romance-photo-caption">~ apaixonados, sempre ~</span>
+        </div>
+      </div>
+
+      <div class="romance-content">
+        <span class="romance-tag">★ edição limitada ★</span>
+        <h3 class="romance-name">Cesta <em>Apaixonados</em></h3>
+        <p class="romance-desc">
+          Inspirada na nostalgia dos anos 50 — uma cesta cheia de afeto pra quem quer surpreender com uma manhã diferente. Balões pastel, etiquetas vintage, polaroid do casal e detalhes que parecem saídos de uma carta antiga.
+          <span class="romance-desc-script">tudo feito com muito carinho ♡</span>
+        </p>
+
+        <div class="romance-items-title">o que vem dentro ~</div>
+        <ul class="romance-items">
+          <li>Cesta redonda de palha</li>
+          <li>Buquê de balões pastel</li>
+          <li>Pote de bolachinhas vintage</li>
+          <li>Croissant artesanal</li>
+          <li>2 garrafinhas de leite</li>
+          <li>Geleia artesanal de morango</li>
+          <li>Caixa de chocolates</li>
+          <li>Cartão Valentine personalizado</li>
+          <li>Polaroid do casal</li>
+          <li>Mini buquê de flores secas</li>
+          <li>Pisca-pisca decorativo</li>
+          <li>Laço xadrez vermelho</li>
+        </ul>
+
+        <div class="romance-bottom">
+          <div class="romance-price-wrap">
+            <span class="romance-price-label">por apenas</span>
+            <span class="romance-price">R$ 269,90</span>
+          </div>
+          <button class="romance-add" onclick="abrirModalCesta('romance')">
+            Quero essa cesta
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="romance-deco" style="margin-top: 3rem; text-align: center;">♥ ✦ ♥</div>
   </div>
 </section>
 
@@ -1413,13 +2145,36 @@ body.no-scroll { overflow: hidden; }
     <h2>Quase lá!</h2>
     <p>Você está finalizando seu pedido pelo WhatsApp.</p>
     <div class="modal-confirm-note">
-      <strong>⚠️ Importante:</strong> o pedido será <strong>contabilizado e confirmado</strong> apenas após o pagamento de <strong>50% do valor total como sinal e envio do comprovante</strong>. Combinaremos a forma de pagamento e a data de entrega pela conversa.
+      <strong>⚠️ Importante:</strong> o pedido será <strong>contabilizado e confirmado</strong> apenas após o pagamento de <strong>50% do valor total como sinal</strong>. Combinaremos a forma de pagamento e a data de entrega pela conversa.
     </div>
     <div class="modal-confirm-actions">
       <button class="btn-secondary" onclick="fecharConfirmacao()">Voltar</button>
       <button class="btn-primary" onclick="enviarParaWhatsApp()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Continuar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Escolha de variante (cor do urso) -->
+<div class="modal-overlay" id="modalVariante" onclick="if(event.target===this) cancelarVariante()">
+  <div class="modal modal-variante">
+    <button class="modal-close" onclick="cancelarVariante()" aria-label="Fechar">×</button>
+    <span class="modal-tag" id="modalVarianteTag">passo extra</span>
+    <h2 id="modalVarianteTitulo">Escolha a cor</h2>
+    <p id="modalVarianteSubtitulo">Toque na cor que prefere — confirmamos disponibilidade pelo WhatsApp.</p>
+    
+    <div class="variantes-grid" id="variantesGrid"></div>
+    
+    <div class="modal-confirm-note">
+      <strong>⚠️ Disponibilidade:</strong> a cor escolhida está sujeita a estoque no momento da entrega. Vamos <strong>confirmar com você pelo WhatsApp</strong> antes de fechar o pedido — se não estiver disponível, oferecemos a outra cor ou removemos do pedido.
+    </div>
+    
+    <div class="modal-confirm-actions">
+      <button class="btn-secondary" onclick="cancelarVariante()">Cancelar</button>
+      <button class="btn-add-to-cart" id="btnConfirmarVariante" onclick="confirmarVariante()" style="opacity: 0.4; pointer-events: none;">
+        Confirmar
       </button>
     </div>
   </div>
@@ -1468,13 +2223,45 @@ const CESTAS = [
       '1 cartão personalizado',
       '1 foto do casal'
     ]
+  },
+  {
+    id: 'romance',
+    tag: 'edição limitada',
+    nome: 'Cesta Apaixonados',
+    descricao: 'Edição especial Romance, com balões, polaroid e itens vintage.',
+    imagem: 'imagens/cesta-romance.png',
+    preco: 269.90,
+    itens: [
+      'Cesta redonda de palha',
+      'Buquê de balões pastel',
+      'Pote de bolachinhas vintage',
+      'Croissant artesanal',
+      '2 garrafinhas de leite',
+      'Geleia artesanal de morango',
+      'Caixa de chocolates',
+      'Cartão Valentine personalizado',
+      'Polaroid do casal',
+      'Mini buquê de flores secas',
+      'Pisca-pisca decorativo',
+      'Laço xadrez vermelho'
+    ]
   }
 ];
 
 const ADICIONAIS = [
-  { id: 'add1', nome: 'Bouquet de flores', preco: 35.00, icone: '💐', desc: 'flores frescas da estação', imagem: 'imagens/bouquet.jpeg' },
-  { id: 'add2', nome: '+1 foto', preco: 8.00, icone: '📷', desc: 'foto extra impressa', imagem: 'imagens/photo.jpeg' },
-  { id: 'add3', nome: 'Urso de pelúcia', preco: 45.00, icone: '🧸', desc: 'pelúcia macia, 25cm', imagem: 'imagens/bear2.jpg' }
+  { id: 'add1', nome: 'Bouquet de flores', preco: 35.00, imagem: 'imagens/bouquet.jpeg', desc: 'flores secas em papel kraft' },
+  { id: 'add2', nome: '+1 foto', preco: 8.00, imagem: 'imagens/polaroid.jpeg', desc: 'foto extra impressa estilo polaroid' },
+  { 
+    id: 'add3', 
+    nome: 'Urso de pelúcia', 
+    preco: 45.00, 
+    desc: 'pelúcia macia com laço xadrez · escolha a cor',
+    imagem: 'imagens/urso-marrom.png',
+    variantes: [
+      { id: 'marrom', nome: 'Marrom', imagem: 'imagens/urso-marrom.png' },
+      { id: 'branco', nome: 'Branco', imagem: 'imagens/urso-branco.png' }
+    ]
+  }
 ];
 
 // ===========================================================
@@ -1487,6 +2274,10 @@ const carrinho = {};
 
 let cestaConfigAtual = null;       // a cesta sendo configurada no modal
 let adicionaisSelecionados = [];   // ids dos adicionais selecionados no modal
+let variantesSelecionadas = {};    // { adicionalId: varianteId } — qual variante foi escolhida pra cada adicional
+
+// Estado temporário do sub-modal de variante
+let varianteEmAndamento = null;    // { adicionalId, varianteId } enquanto o usuário escolhe
 
 function fmt(v) {
   return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -1496,7 +2287,9 @@ function fmt(v) {
 
 function renderCestas() {
   const grid = document.getElementById('cestasGrid');
-  grid.innerHTML = CESTAS.map((c, i) => `
+  // Mostra apenas as cestas "regulares" — a romance tem sua própria seção
+  const cestasRegulares = CESTAS.filter(c => c.id !== 'romance');
+  grid.innerHTML = cestasRegulares.map((c, i) => `
     <article class="cesta-card">
       <span class="cesta-tag">${String(i+1).padStart(2,'0')} · ${c.tag}</span>
       <button class="cesta-like" onclick="event.stopPropagation(); this.classList.toggle('liked')" aria-label="Favoritar">♥</button>
@@ -1524,15 +2317,23 @@ function renderCestas() {
 
 function renderAdicionaisInfo() {
   const grid = document.getElementById('adicionaisInfo');
-  grid.innerHTML = ADICIONAIS.map((a) => `
+  grid.innerHTML = ADICIONAIS.map((a) => {
+    const hasPhoto = !!a.imagem;
+    const visual = hasPhoto
+      ? `<div class="adicional-info-visual with-photo" style="background-image: url('${a.imagem}')"></div>`
+      : `<div class="adicional-info-visual">${a.icone}</div>`;
+    const tagText = a.variantes ? 'escolha cor' : 'opcional';
+    const tagClass = a.variantes ? 'adicional-info-tag has-variantes' : 'adicional-info-tag';
+    return `
     <div class="adicional-info-card">
-      <span class="adicional-info-tag">opcional</span>
-      <div class="cesta-image" style="background-image: url('${a.imagem}')"></div>
+      <span class="${tagClass}">${tagText}</span>
+      ${visual}
       <div class="adicional-info-name">${a.nome}</div>
       <div class="adicional-info-price">+ ${fmt(a.preco)}</div>
       <div class="adicional-info-desc">${a.desc}</div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
 // ---------- Modal Configurar Cesta ----------
@@ -1540,6 +2341,7 @@ function renderAdicionaisInfo() {
 function abrirModalCesta(cestaId) {
   cestaConfigAtual = CESTAS.find(c => c.id === cestaId);
   adicionaisSelecionados = [];
+  variantesSelecionadas = {};
   
   document.getElementById('modalCestaImage').style.backgroundImage = `url('${cestaConfigAtual.imagem}')`;
   renderModalCestaContent();
@@ -1566,29 +2368,117 @@ function renderModalCestaContent() {
     
     <div class="modal-section-title">Quer incluir algum extra?</div>
     <div class="modal-adicionais">
-      ${ADICIONAIS.map(a => `
-        <div class="modal-adicional ${adicionaisSelecionados.includes(a.id) ? 'selected' : ''}" onclick="toggleAdicionalModal('${a.id}')">
-          <div class="modal-adicional-check">${adicionaisSelecionados.includes(a.id) ? '✓' : ''}</div>
-          <div class="modal-adicional-icon">${a.icone}</div>
+      ${ADICIONAIS.map(a => {
+        const selected = adicionaisSelecionados.includes(a.id);
+        const hasPhoto = !!a.imagem;
+        const iconHtml = hasPhoto
+          ? `<div class="modal-adicional-icon with-photo" style="background-image: url('${a.imagem}')"></div>`
+          : `<div class="modal-adicional-icon">${a.icone}</div>`;
+        const varianteId = variantesSelecionadas[a.id];
+        const variante = varianteId && a.variantes ? a.variantes.find(v => v.id === varianteId) : null;
+        const varianteTag = variante 
+          ? `<div class="modal-adicional-variante-tag">cor: ${variante.nome}</div>` 
+          : '';
+        return `
+        <div class="modal-adicional ${selected ? 'selected' : ''}" onclick="toggleAdicionalModal('${a.id}')">
+          <div class="modal-adicional-check">${selected ? '✓' : ''}</div>
+          ${iconHtml}
           <div class="modal-adicional-info">
             <div class="modal-adicional-name">${a.nome}</div>
             <div class="modal-adicional-desc">${a.desc}</div>
+            ${varianteTag}
           </div>
           <div class="modal-adicional-price">+ ${fmt(a.preco)}</div>
         </div>
-      `).join('')}
+      `;
+      }).join('')}
     </div>
   `;
 }
 
 function toggleAdicionalModal(adId) {
-  if (adicionaisSelecionados.includes(adId)) {
+  const adicional = ADICIONAIS.find(a => a.id === adId);
+  const jaSelecionado = adicionaisSelecionados.includes(adId);
+  
+  if (jaSelecionado) {
+    // Desselecionando: remove da seleção e limpa a variante
     adicionaisSelecionados = adicionaisSelecionados.filter(id => id !== adId);
-  } else {
-    adicionaisSelecionados.push(adId);
+    delete variantesSelecionadas[adId];
+    renderModalCestaContent();
+    atualizarTotalModal();
+    return;
   }
+  
+  // Selecionando: se tem variantes, abre sub-modal pra escolher
+  if (adicional.variantes && adicional.variantes.length) {
+    abrirModalVariante(adId);
+    return;
+  }
+  
+  // Caso normal sem variantes
+  adicionaisSelecionados.push(adId);
   renderModalCestaContent();
   atualizarTotalModal();
+}
+
+// --- Sub-modal de variante (cor do urso) ---
+
+function abrirModalVariante(adId) {
+  const adicional = ADICIONAIS.find(a => a.id === adId);
+  varianteEmAndamento = { adicionalId: adId, varianteId: null };
+  
+  document.getElementById('modalVarianteTitulo').textContent = `Escolha a cor do ${adicional.nome.toLowerCase()}`;
+  document.getElementById('variantesGrid').innerHTML = adicional.variantes.map(v => `
+    <div class="variante-option" onclick="selecionarVariante('${v.id}')" data-vid="${v.id}">
+      <div class="variante-img" style="background-image: url('${v.imagem}')"></div>
+      <div class="variante-name">${v.nome}</div>
+      <div class="variante-check">✓</div>
+    </div>
+  `).join('');
+  
+  // Reset confirmar
+  const btn = document.getElementById('btnConfirmarVariante');
+  btn.style.opacity = '0.4';
+  btn.style.pointerEvents = 'none';
+  
+  document.getElementById('modalVariante').classList.add('open');
+}
+
+function selecionarVariante(varianteId) {
+  if (!varianteEmAndamento) return;
+  varianteEmAndamento.varianteId = varianteId;
+  
+  // Atualiza visual: destaca a opção escolhida
+  document.querySelectorAll('.variante-option').forEach(el => {
+    el.classList.toggle('selected', el.dataset.vid === varianteId);
+  });
+  
+  // Habilita botão de confirmar
+  const btn = document.getElementById('btnConfirmarVariante');
+  btn.style.opacity = '1';
+  btn.style.pointerEvents = 'auto';
+}
+
+function confirmarVariante() {
+  if (!varianteEmAndamento || !varianteEmAndamento.varianteId) return;
+  
+  const { adicionalId, varianteId } = varianteEmAndamento;
+  adicionaisSelecionados.push(adicionalId);
+  variantesSelecionadas[adicionalId] = varianteId;
+  
+  fecharModalVariante();
+  renderModalCestaContent();
+  atualizarTotalModal();
+}
+
+function cancelarVariante() {
+  // Fecha sem selecionar nada (adicional fica desmarcado)
+  fecharModalVariante();
+}
+
+function fecharModalVariante() {
+  document.getElementById('modalVariante').classList.remove('open');
+  varianteEmAndamento = null;
 }
 
 function calcularTotalModal() {
@@ -1606,10 +2496,21 @@ function atualizarTotalModal() {
 
 function confirmarAdicaoCesta() {
   const ads = adicionaisSelecionados
-    .map(id => ADICIONAIS.find(a => a.id === id))
+    .map(id => {
+      const ad = ADICIONAIS.find(a => a.id === id);
+      if (!ad) return null;
+      const varianteId = variantesSelecionadas[id];
+      if (varianteId && ad.variantes) {
+        const v = ad.variantes.find(x => x.id === varianteId);
+        return { ...ad, varianteId, varianteNome: v ? v.nome : varianteId };
+      }
+      return { ...ad };
+    })
     .filter(Boolean);
   
-  const signature = `${cestaConfigAtual.id}::${ads.map(a => a.id).sort().join(',')}`;
+  // Assinatura única considerando variantes
+  const sigParts = ads.map(a => a.varianteId ? `${a.id}.${a.varianteId}` : a.id).sort();
+  const signature = `${cestaConfigAtual.id}::${sigParts.join(',')}`;
   
   if (carrinho[signature]) {
     carrinho[signature].qty += 1;
@@ -1671,7 +2572,7 @@ function renderCartItems() {
         <div class="cart-item-name">${x.cesta.nome}</div>
         ${x.adicionais.length ? `
           <div class="cart-item-adicionais">
-            ${x.adicionais.map(a => `<span class="adicional-line">${a.nome} (${fmt(a.preco)})</span>`).join('')}
+            ${x.adicionais.map(a => `<span class="adicional-line">${a.nome}${a.varianteNome ? ` <em>(${a.varianteNome})</em>` : ''} (${fmt(a.preco)})</span>`).join('')}
           </div>
         ` : '<div class="cart-item-adicionais"><em>sem adicionais</em></div>'}
         <div class="cart-item-subtotal">${fmt(x.precoUnit * x.qty)}</div>
@@ -1719,7 +2620,8 @@ function enviarParaWhatsApp() {
     msg += `*${x.qty}x ${x.cesta.nome}* — ${fmt(x.cesta.preco)}\n`;
     if (x.adicionais.length) {
       x.adicionais.forEach(a => {
-        msg += `   ↳ + ${a.nome} (${fmt(a.preco)})\n`;
+        const variante = a.varianteNome ? ` — cor: ${a.varianteNome}` : '';
+        msg += `   ↳ + ${a.nome}${variante} (${fmt(a.preco)})\n`;
       });
     }
     msg += `   _Subtotal: ${fmt(x.precoUnit * x.qty)}_\n\n`;
@@ -1728,8 +2630,16 @@ function enviarParaWhatsApp() {
   const total = calcTotal();
   const sinal = total * 0.5;
   
+  // Verifica se algum item tem variante de cor (precisa confirmar disponibilidade)
+  const temVariantes = entries.some(x => x.adicionais.some(a => a.varianteNome));
+  
   msg += `*Total: ${fmt(total)}*\n`;
   msg += `_Sinal (50%): ${fmt(sinal)}_\n\n`;
+  
+  if (temVariantes) {
+    msg += '_(aguardo confirmação da disponibilidade das cores escolhidas)_\n\n';
+  }
+  
   msg += 'Gostaria de finalizar este pedido. Aguardo as instruções para o pagamento do sinal. 💌';
   
   const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(msg)}`;
@@ -1741,8 +2651,13 @@ function enviarParaWhatsApp() {
 // Tecla ESC fecha modais
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    fecharModalCesta();
-    fecharConfirmacao();
+    // Fecha o sub-modal primeiro se estiver aberto, senão os outros
+    if (document.getElementById('modalVariante').classList.contains('open')) {
+      cancelarVariante();
+    } else {
+      fecharModalCesta();
+      fecharConfirmacao();
+    }
   }
 });
 
